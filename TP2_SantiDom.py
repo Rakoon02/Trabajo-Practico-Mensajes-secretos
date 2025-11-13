@@ -7,7 +7,7 @@ def crear_ventana():
     raiz=Tk()
     raiz.title("TP Grupal Parte 1 - Grupo: SantiDom")
     raiz.geometry("500x200")
-    raiz.iconbitmap("icon_eye.ico")
+    raiz.iconbitmap("Trabajo_Extra/icon_eye.ico")
     raiz.config(bg= "grey")
 
     mi_frame = Frame(raiz, width=500, height=200)
@@ -34,7 +34,7 @@ def ventana_registrar_usuario():
     ventana_registro.title("Registro de Usuario")
     ventana_registro.resizable(0,0)
     ventana_registro.geometry("500x250")
-    ventana_registro.iconbitmap("icon_eye.ico")
+    ventana_registro.iconbitmap("Trabajo_Extra/icon_eye.ico")
     ventana_registro.config(bg= "grey")
 
     mi_frame = Frame(ventana_registro, width=500, height=250)
@@ -251,7 +251,7 @@ def ventana_ingresar_usuario():
     ventana_ingreso.title("Identificación para acceso")
     ventana_ingreso.resizable(0,0)
     ventana_ingreso.geometry("400x150")
-    ventana_ingreso.iconbitmap("icon_eye.ico")
+    ventana_ingreso.iconbitmap("Trabajo_Extra/icon_eye.ico")
     ventana_ingreso.config(bg= "grey")
 
     mi_frame = Frame(ventana_ingreso, width=400, height=150)
@@ -345,7 +345,7 @@ def ventana_recuperar_clave(usuario):
     ventana_recuperacion.title("Recuperación Clave")
     ventana_recuperacion.resizable(0,0)
     ventana_recuperacion.geometry("400x150")
-    ventana_recuperacion.iconbitmap("icon_eye.ico")
+    ventana_recuperacion.iconbitmap("Trabajo_Extra/icon_eye.ico")
     ventana_recuperacion.config(bg= "grey")
 
     mi_frame = Frame(ventana_recuperacion, width=400, height=150)
@@ -444,7 +444,7 @@ def ventana_cifrado(usuario_remitente):
     ventana_cifrado.title("Cifrado y Descifrado de Mensajes")
     ventana_cifrado.resizable(0,0)
     ventana_cifrado.geometry("700x350")
-    ventana_cifrado.iconbitmap("icon_eye.ico")
+    ventana_cifrado.iconbitmap("Trabajo_Extra/icon_eye.ico")
     ventana_cifrado.config(bg= "grey")
 
     mi_frame = Frame(ventana_cifrado, width=700, height=350)
@@ -493,7 +493,7 @@ def ventana_enviar_cesar(usuario_remitente):
     ventana.title("Enviar Mensaje Cifrado")
     ventana.resizable(0,0)
     ventana.geometry("500x250")
-    ventana.iconbitmap("icon_eye.ico")
+    ventana.iconbitmap("Trabajo_Extra/icon_eye.ico")
     ventana.config(bg= "grey")
 
     mi_frame = Frame(ventana, width=500, height=250)
@@ -520,7 +520,7 @@ def ventana_enviar_atbash(usuario_remitente):
     ventana.title("Enviar Mensaje Cifrado")
     ventana.resizable(0,0)
     ventana.geometry("500x250")
-    ventana.iconbitmap("icon_eye.ico")
+    ventana.iconbitmap("Trabajo_Extra/icon_eye.ico")
     ventana.config(bg= "grey")
 
     mi_frame = Frame(ventana, width=500, height=250)
@@ -672,7 +672,7 @@ def ventana_consultar_mensajes(usuario):
     ventana = Toplevel()
     ventana.title("Mensajes recibidos")
     ventana.geometry("600x400")
-    ventana.iconbitmap("icon_eye.ico")
+    ventana.iconbitmap("Trabajo_Extra/icon_eye.ico")
     ventana.config(bg="gray")
 
     frame = Frame(ventana, bg="gray", padx=10, pady=10)
