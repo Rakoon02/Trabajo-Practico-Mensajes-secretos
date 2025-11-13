@@ -84,7 +84,7 @@ def crear_ventana():
     raiz=Tk()
     raiz.title("TP Grupal Parte 1 - Grupo: SantiDom")
     raiz.geometry("500x200")
-    raiz.iconbitmap("Trabajo_Extra/icon_eye.ico")
+    raiz.iconbitmap("icon_eye.ico")
     raiz.config(bg= "grey")
 
     mi_frame = Frame(raiz, width=500, height=200)
@@ -108,41 +108,42 @@ def ventana_cifrado():
     ventana_cifrado.title("Cifrado y Descifrado de Mensajes")
     ventana_cifrado.resizable(0,0)
     ventana_cifrado.geometry("700x350")
-    ventana_cifrado.iconbitmap("Trabajo_Extra/icon_eye.ico")
+    ventana_cifrado.iconbitmap("icon_eye.ico")
     ventana_cifrado.config(bg= "gray")
 
     mi_frame = Frame(ventana_cifrado, width=700, height=350)
     mi_frame.pack()
     mi_frame.config(bg="gray")
 
+    resultado_var = StringVar()
+
     Label(mi_frame, text="Mensaje:", bg="gray", padx=2, pady=8).grid(row=0, column=0, sticky="e")
     cuadro_mensaje = Entry(mi_frame, width=50)
-    cuadro_mensaje.grid(row=0, column=1, columnspan=3)
+    cuadro_mensaje.grid(row=0, column=1, columnspan=1)
 
     Label(mi_frame, text="Clave de Cifrado:", bg="gray", padx=0, pady=8).grid(row=1, column=1, sticky="w")
     cuadro_clave = Entry(mi_frame, width=10)
     cuadro_clave.grid(row=1, column=1, sticky="e")
 
     Label(mi_frame, text="Resultado:", bg="gray", padx=2, pady=8).grid(row=5, column=0, sticky="e")
-    resultado_entry = Entry(mi_frame, width=50)
-    resultado_entry.grid(row=5, column=1, columnspan=3)
+    resultado_label = Label(mi_frame, textvariable=resultado_var, bg="white", width=50, anchor="w")
+    resultado_label.grid(row=5, column=1, columnspan=1)
 
-    boton_cesar = Button(mi_frame, text="Cifrar mensaje César", command=lambda: mostrar_resultado(resultado_entry, cifrado_cesar(cuadro_mensaje.get(), cuadro_clave.get())))
+    boton_cesar = Button(mi_frame, text="Cifrar mensaje César", command=lambda: mostrar_resultado(resultado_var, cifrado_cesar(cuadro_mensaje.get(), cuadro_clave.get())))
     boton_cesar.grid(row=1, column=0, pady=5)
     
-    boton_atbash = Button(mi_frame, text="Cifrar mensaje Atbash", command=lambda: mostrar_resultado(resultado_entry, cifrado_atbash(cuadro_mensaje.get())))
+    boton_atbash = Button(mi_frame, text="Cifrar mensaje Atbash", command=lambda: mostrar_resultado(resultado_var, cifrado_atbash(cuadro_mensaje.get())))
     boton_atbash.grid(row=3, column=0, pady=5)
 
-    boton_descifrar_cesar = Button(mi_frame, text="Descifrar mensaje César", command=lambda: mostrar_resultado(resultado_entry, cifrado_cesar(cuadro_mensaje.get(), -int(cuadro_clave.get()))))
+    boton_descifrar_cesar = Button(mi_frame, text="Descifrar mensaje César", command=lambda: mostrar_resultado(resultado_var, cifrado_cesar(cuadro_mensaje.get(), -int(cuadro_clave.get()))))
     boton_descifrar_cesar.grid(row=2, column=0, pady=5)
 
-    boton_descifrar_atbash = Button(mi_frame, text="Descifrar mensaje Atbash", command=lambda: mostrar_resultado(resultado_entry, cifrado_atbash(cuadro_mensaje.get())))
+    boton_descifrar_atbash = Button(mi_frame, text="Descifrar mensaje Atbash", command=lambda: mostrar_resultado(resultado_var, cifrado_atbash(cuadro_mensaje.get())))
     boton_descifrar_atbash.grid(row=4, column=0, pady=5)
 
-def mostrar_resultado(resultado_entry, resultado):
+def mostrar_resultado(resultado_var, resultado):
     #Muestra el resultado en el entry correspondiente
-    resultado_entry.delete(0, END)
-    resultado_entry.insert(0, resultado)
+    resultado_var.set(resultado)
 
 def main():
     crear_ventana()
